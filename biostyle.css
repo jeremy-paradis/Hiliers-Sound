@@ -1,0 +1,77 @@
+/* Colors */
+:root {
+    --background-color: #ffffff;
+    --text-color: #000000;
+    --accent-color: #7dafffc5;
+    --secondary-color: #df8eff;
+}
+
+header {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: var(--background-color);
+    font-size: larger;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.video-container {
+    background-color: var(--text-color);
+    height: 30vh;
+    margin: none;
+    padding: none;
+    margin-bottom: 10px;
+}
+
+.video-container video {
+    width: 100%;
+    height: auto;
+}
+
+.bio {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.links {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    background-color: var(--accent-color);
+    padding: 20px;
+    height: 60px;
+}
+
+.links i {
+    margin-right: 10px;
+}
+
+.links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: larger;
+}
+
+footer {
+    margin-top: 10px;
+    padding: 20px;
+    height: 19vh;
+    background-color: var(--secondary-color);
+}
+
+footer h1 {
+    text-align: center;
+    font-size: larger;
+    margin-bottom: 40px;
+}
+
+footer p {
+    text-align: center;
+    font-size: medium;
+    margin-top: 20px;
+}
