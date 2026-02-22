@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OctoberSign</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon.jpg" type="image/x-icon" />
+
+  <!-- Publicité -->
+<script data-cfasync="false" src="https://cmp.gatekeeperconsent.com/min.js"></script>
+<script data-cfasync="false" src="https://the.gatekeeperconsent.com/cmp.min.js"></script>
+<script async src="//www.ezojs.com/ezoic/sa.min.js"></script>
+<script>
+    window.ezstandalone = window.ezstandalone || {};
+    ezstandalone.cmd = ezstandalone.cmd || [];
+</script>
+
+</head>
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<body>
+        <!-- 3D Video-->
+    <div class="header">
+        <video autoplay loop muted playsinline class="hero-video">
+            <source src="3Dvideo.mp4" type="video/mp4">
+        </video>
+    </div>
+
+  <div class="container">
+
+    <h1>OctoberSign Vocal Presets</h1>
+
+    <p class="description">
+      Presets vocaux officiels utilisés dans OCTOBERSIGN.
+    </p>
+
+    <!-- Preview audio -->
+    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/6fFpRquDdOFpGanN9y6kQ6?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    
+
+    <!-- Download button -->
+<form id="downloadForm">
+  <input 
+    type="email" 
+    id="email" 
+    placeholder="Entre ton email" 
+    required
+  >
+  <button class="submit" type="submit">Accéder au téléchargement</button>
+</form>
+
+<a id="downloadLink" href="PARADISE VOCAL PRESETS.rar" download style="display:none;">
+  Télécharger le preset
+</a>
+
+    <!-- Donation button Ko-fi -->
+    <a href="https://ko-fi.com/jeremyparadis" target="_blank">
+      <button class="donate-btn">
+        Faire un don
+      </button>
+    </a>
+
+</div>
+
+  <div id="ezoic-pub-ad-placeholder-101"></div>
+<script>
+    ezstandalone.cmd.push(function () {
+        ezstandalone.showAds(101);
+    });
+</script>
+  
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+(function(){
+   emailjs.init("UdQq0nnXj0e6aZ6_5");
+})();
+
+document.addEventListener("DOMContentLoaded", function() {
+
+    document.getElementById("downloadForm").addEventListener("submit", function(e){
+        e.preventDefault();
+
+        const email = document.getElementById("email").value;
+
+        emailjs.send("service_pezcoqs", "template_hlyne21", {
+            user_email: email
+        })
+        .then(function() {
+            console.log("Mail envoyé !");
+        })
+        .catch(function(error) {
+            console.log("Erreur :", error);
+        });
+
+        document.getElementById("downloadLink").style.display = "block";
+    });
+
+});
+</script>
+
+</body>
+
+<footer class="footer">
+
+    <div class="footer-content">
+
+        <div class="footer-logo">
+            OCTOBERSIGN
+        </div>
+
+        <div class="footer-links">
+
+            <a href="#">Accueil</a>
+
+            <a href="https://ko-fi.com/jeremyparadis" target="_blank">
+                Donation
+            </a>
+
+            <a href="https://bio.site/jeremyparadis" target="_blank">
+                Contact
+            </a>
+
+            <a href="https://jeremyparadis.space/" target="_blank">
+                Portfolio
+            </a>
+
+        <a href="politique.html" target="_blank">
+          Politique de Confidentialité
+        </a>
+
+
+        </div>
+
+        <div class="footer-copy">
+            © 2026 OCTOBERSIGN. All rights reserved.
+        </div>
+
+    </div>
+
+</footer>
+
+</html>
+
+
+
+
+
+
+

@@ -1,0 +1,270 @@
+/* Reset de base pour éviter le chaos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body global */
+body {
+
+    background: #000;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+/* HEADER / BANNIERE GIF */
+
+.header {
+
+    width: 100%;
+    max-width: 900px;
+
+    margin-top: 40px;
+    margin-bottom: 30px;
+
+    display: flex;
+    justify-content: center;
+
+}
+
+.hero-video {
+  width: 100%;
+  max-width: 900px;
+  margin-top: -15%;
+}
+
+/* CONTENU PRINCIPAL */
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 24px;
+  width: 100%;
+}
+
+/* TITRE */
+
+h1 {
+
+    font-size: 28px;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+
+}
+
+/* DESCRIPTION */
+
+.description {
+
+    opacity: 0.6;
+    font-size: 14px;
+    margin-bottom: 25px;
+
+}
+
+/* SPOTIFY EMBED */
+
+iframe {
+
+    margin-bottom: 25px;
+
+}
+
+/* BOUTONS */
+
+button {
+
+    width: 100%;
+    padding: 14px;
+    margin-top: 20px;
+
+
+    border-radius: 8px;
+
+    font-size: 14px;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+}
+
+/* DOWNLOAD */
+
+.download-btn {
+
+    background: white;
+    color: black;
+    border: none;
+
+}
+
+.download-btn:hover {
+
+    opacity: 0.8;
+
+}
+
+/* DONATE */
+
+.donate-btn {
+
+    background: transparent;
+    color: white;
+    border: 1px solid white;
+
+}
+
+.donate-btn:hover {
+
+    background: white;
+    color: black;
+
+}
+
+/* PUB */
+
+.ad {
+
+    margin-top: 30px;
+    opacity: 0.8;
+
+}
+
+/* RESPONSIVE MOBILE */
+
+@media (max-width: 768px) {
+  .hero-video {
+    width: 100%;
+    max-width: 100%;
+  }
+
+    .container {
+    padding: 16px;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  .description {
+    font-size: 0.95rem;
+    text-align: center;
+  }
+}
+
+.footer {
+
+    width: 100%;
+    margin-top: 60px;
+
+    padding: 30px 20px;
+
+    border-top: 1px solid rgba(255,255,255,0.1);
+
+    display: flex;
+    justify-content: center;
+
+}
+
+.footer-content {
+
+    width: 100%;
+    max-width: 900px;
+
+    text-align: center;
+
+}
+
+.footer-logo {
+
+    font-size: 14px;
+    letter-spacing: 3px;
+
+    margin-bottom: 15px;
+
+    opacity: 0.8;
+
+}
+
+.footer-links {
+
+    margin-bottom: 15px;
+
+}
+
+.footer-links a {
+
+    color: white;
+
+    text-decoration: none;
+
+    margin: 0 10px;
+
+    font-size: 13px;
+
+    opacity: 0.6;
+
+    transition: 0.2s;
+
+}
+
+.footer-links a:hover {
+
+    opacity: 1;
+
+}
+
+.footer-copy {
+
+    font-size: 12px;
+
+    opacity: 0.4;
+
+}
+
+#email {
+    width: 100%;
+    padding: 14px;
+
+    margin-bottom: 10px;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+/* Quand l'utilisateur clique dans le champ */
+#email:focus {
+  border-color: #ffffff;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+}
+
+/* Style du placeholder */
+#email::placeholder {
+  color: #434343;
+}
+
+.submit-btn {
+    background: white;
+    color: black;
+    border: none;
+    margin: none;
+}
+
+#downloadLink {
+    color: white;
+    text-decoration: underline;
+    font-size: 14px;
+    letter-spacing: 1px;
+    padding: 20px;
+}
