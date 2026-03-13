@@ -1,0 +1,408 @@
+/* ============================================
+   HILIERS SPACE — Instagram Bio Link Page
+   Glassmorphism Apple Style
+   ============================================ */
+
+/* Google Fonts — Premium Typography */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* ── Design Tokens ── */
+:root {
+    --bg-dark: #050505;
+    --purple-deep: #0e0618;
+    --purple-mid: #1e0a3a;
+    --purple-bright: #5b21b6;
+    --purple-accent: #7c3aed;
+    --purple-light: #9b6dff;
+    --purple-glow: #b794f6;
+    --blue-deep: #060d1f;
+    --blue-mid: #0c1a3d;
+    --blue-accent: #1e3a8a;
+    --blue-glow: #3b5fe0;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-shadow: rgba(91, 33, 182, 0.12);
+    --text-primary: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.65);
+    --text-muted: rgba(255, 255, 255, 0.35);
+}
+
+/* ── Reset ── */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ── Body — Dark Purple & Blue Gradient Background ── */
+body {
+    min-height: 100vh;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    color: var(--text-primary);
+    overflow-x: hidden;
+
+    /* Multi-layer dark purple + blue gradient */
+    background:
+        radial-gradient(ellipse at 15% 55%, rgba(91, 33, 182, 0.18) 0%, transparent 55%),
+        radial-gradient(ellipse at 85% 25%, rgba(30, 58, 138, 0.2) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 80%, rgba(59, 95, 224, 0.12) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 70%, rgba(14, 6, 24, 0.6) 0%, transparent 60%),
+        linear-gradient(180deg, #000000 0%, #0a0515 15%, #0e0618 30%, #0c1230 50%, #0e0618 70%, #050505 100%);
+    background-attachment: fixed;
+}
+
+/* Animated floating orbs in the background */
+body::before {
+    content: '';
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background:
+        radial-gradient(circle at 25% 35%, rgba(91, 33, 182, 0.1) 0%, transparent 40%),
+        radial-gradient(circle at 75% 55%, rgba(30, 58, 138, 0.1) 0%, transparent 35%),
+        radial-gradient(circle at 50% 80%, rgba(59, 95, 224, 0.06) 0%, transparent 30%),
+        radial-gradient(circle at 60% 30%, rgba(14, 6, 24, 0.15) 0%, transparent 45%);
+    animation: floatOrbs 20s ease-in-out infinite alternate;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes floatOrbs {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    33% {
+        transform: translate(2%, -3%) rotate(5deg);
+    }
+
+    66% {
+        transform: translate(-2%, 2%) rotate(-3deg);
+    }
+
+    100% {
+        transform: translate(1%, -1%) rotate(2deg);
+    }
+}
+
+/* ── Header — Pure Black ── */
+header {
+    position: relative;
+    background: #000000;
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* No overlay on header — keep it pure black */
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: none;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Glowing edge line at bottom of header — purple to blue */
+header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    width: 80%;
+    height: 1px;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(30, 58, 138, 0.5),
+            rgba(91, 33, 182, 0.7),
+            rgba(59, 95, 224, 0.6),
+            rgba(91, 33, 182, 0.7),
+            rgba(30, 58, 138, 0.5),
+            transparent);
+    z-index: 2;
+    animation: glowLine 3s ease-in-out infinite alternate;
+}
+
+@keyframes glowLine {
+    0% {
+        opacity: 0.4;
+        filter: blur(0px);
+    }
+
+    100% {
+        opacity: 1;
+        filter: blur(1px);
+    }
+}
+
+.header {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-video {
+    width: 100%;
+    max-width: 600px;
+    display: block;
+    margin-top: -10%;
+}
+
+/* ── Main Bio Section ── */
+.bio {
+    position: relative;
+    z-index: 1;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 30px 20px 60px;
+}
+
+/* ── Glass Links — Apple Glassmorphism ── */
+.links {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 24px;
+    margin-bottom: 14px;
+    border-radius: 16px;
+    cursor: pointer;
+    text-decoration: none;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+    /* ── The Glass Effect ── */
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow:
+        0 4px 30px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Glass inner light reflection */
+.links::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(180deg,
+            rgba(255, 255, 255, 0.08) 0%,
+            transparent 100%);
+    border-radius: 16px 16px 0 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+/* Glow effect behind on hover */
+.links::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(ellipse at center,
+            rgba(59, 95, 224, 0.1) 0%,
+            rgba(91, 33, 182, 0.08) 40%,
+            transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* ── Hover State ── */
+.links:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(59, 95, 224, 0.3);
+    box-shadow:
+        0 8px 40px rgba(30, 58, 138, 0.2),
+        0 2px 15px rgba(91, 33, 182, 0.15),
+        0 0 60px rgba(59, 95, 224, 0.05),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px) scale(1.01);
+}
+
+.links:hover::before {
+    opacity: 0.7;
+}
+
+.links:hover::after {
+    opacity: 1;
+}
+
+/* ── Active State (click) ── */
+.links:active {
+    transform: translateY(0px) scale(0.98);
+    box-shadow:
+        0 2px 15px rgba(124, 58, 237, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    transition: all 0.1s ease;
+}
+
+/* ── Icons ── */
+.links i {
+    font-size: 20px;
+    color: var(--purple-light);
+    width: 28px;
+    text-align: center;
+    flex-shrink: 0;
+    transition: all 0.4s ease;
+    filter: drop-shadow(0 0 6px rgba(192, 132, 252, 0.3));
+}
+
+.links:hover i {
+    color: var(--purple-glow);
+    filter: drop-shadow(0 0 10px rgba(216, 180, 254, 0.5));
+    transform: scale(1.15);
+}
+
+/* ── Link Text ── */
+.links a {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    transition: all 0.3s ease;
+    flex-grow: 1;
+}
+
+.links:hover a {
+    color: #ffffff;
+    text-shadow: 0 0 20px rgba(216, 180, 254, 0.3);
+}
+
+/* ── Stagger animation on page load ── */
+.links:nth-child(1) {
+    animation: slideUp 0.6s ease-out 0.1s both;
+}
+
+.links:nth-child(2) {
+    animation: slideUp 0.6s ease-out 0.2s both;
+}
+
+.links:nth-child(3) {
+    animation: slideUp 0.6s ease-out 0.3s both;
+}
+
+.links:nth-child(4) {
+    animation: slideUp 0.6s ease-out 0.4s both;
+}
+
+.links:nth-child(5) {
+    animation: slideUp 0.6s ease-out 0.5s both;
+}
+
+.links:nth-child(6) {
+    animation: slideUp 0.6s ease-out 0.6s both;
+}
+
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ── Footer ── */
+footer {
+    padding: 100px 20px 100px;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+
+    /* Glass footer */
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+footer h1 {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, var(--blue-glow), var(--purple-light), var(--blue-glow));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+footer p {
+    font-size: 12px;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+    .bio {
+        padding: 20px 16px 50px;
+    }
+
+    .links {
+        padding: 16px 20px;
+        border-radius: 14px;
+        gap: 12px;
+    }
+
+    .links a {
+        font-size: 14px;
+    }
+
+    .links i {
+        font-size: 18px;
+        width: 24px;
+    }
+
+    .hero-video {
+        margin-top: -12%;
+    }
+
+    footer h1 {
+        font-size: 14px;
+        letter-spacing: 3px;
+    }
+}
+
+/* ── Accessibility — Respect reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
